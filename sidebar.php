@@ -27,6 +27,18 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="mahasiswa.php">
+                <svg class="bi"><use xlink:href="#people"/></svg>
+                Fasilitas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="mahasiswa.php">
+                <svg class="bi"><use xlink:href="#people"/></svg>
+                Telepon
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="index.php">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
                 Sign out

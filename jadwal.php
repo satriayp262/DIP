@@ -47,17 +47,20 @@ if (!$result) {
         <th>No</th>
         <th>Nama Bus</th>
         <th>Tujuan</th>
+        <th>Kelas</th>
         <th>Jam Kedatangan</th>
         <th>Jam Keberangkatan</th>
     </tr>
 
     <?php
+    $no=1;
     // Ambil data dan tampilkan
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
 		echo "<td>" . $no++ . "</td>";
         echo "<td>" . $row['nama_bus'] . "</td>";
         echo "<td>" . $row['tujuan'] . "</td>";
+        echo "<td>" . $row['kelas'] . "</td>";
         echo "<td>" . $row['jam_datang'] . "</td>";
         echo "<td>" . $row['jam_berangkat'] . "</td>";
         echo "</tr>";
