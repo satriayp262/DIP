@@ -7,10 +7,10 @@
     <title>Login</title>
 </head>
 <body>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../../public/css/login.css">
 <div class="wrapper">
         <div class="logo">
-            <img src="/asset/logo.png" alt="">
+            <img src="../../public/asset/logo.png" alt="">
         </div>
         <div class="text-center mt-3 name">
             TERMINAL BUS CILACAP
@@ -26,9 +26,6 @@
             </div>
             <button class="btn mt-3">Login</button>
         </form>
-        <div class="text-center fs-6">
-            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
-        </div>
     </div>
 </body>
 </html>
