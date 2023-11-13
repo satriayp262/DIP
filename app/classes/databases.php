@@ -33,13 +33,13 @@ class database{
         return $data;
     }
 
-    function tambah_jdwl($nim,$nama,$alamat){
-        mysqli_query($this->koneksi,"insert into mahasiswa (nim,nama,alamat) values('$nim','$nama','$alamat')");
+    function tambah_jdwl($id_bus,$tujuan,$kelas,$jam_datang,$jam_berangkat){
+        mysqli_query($this->koneksi,"insert into jadwal (id_bus,tujuan,kelas,jam_datang,jam_berangkat) values('$id_bus','$tujuan','$kelas','$jam_datang','$jam_berangkat')");
     }
 
     function edit($id){
         $hasil=array();
-        $data = mysqli_query($this->koneksi,"select * from jadwal where id='$id'");
+        $data = mysqli_query($this->koneksi,"select * from jadwal where id_jadwal='$id'");
         while($d = mysqli_fetch_array($data)){
             $hasil[] = $d;
         }

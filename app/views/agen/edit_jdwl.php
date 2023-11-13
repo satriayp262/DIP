@@ -48,7 +48,7 @@ $db = new database();
 
 <h3 class="text-center mt-5">Edit Jadwal Perjalanan Bus</h3>
 <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-<form action="proses_mhs.php?aksi=update" method="post">
+<form action="proses_jdwl.php?aksi=update" method="post">
     <?php
     foreach ($db -> edit($_GET['id_jadwal']) as $d){
     ?>

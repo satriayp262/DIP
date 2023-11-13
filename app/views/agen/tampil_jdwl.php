@@ -82,7 +82,7 @@ $db = new Database();
 <body>
 <div>
     <nav class="navbar bg-tertiary">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand">
                 <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
                 Terminal Bus Cilacap
@@ -92,7 +92,7 @@ $db = new Database();
 </div>
 
 <div class="sidebar">
-    <a href="#">Dashboard</a>
+    <a href="dashboard.php">Dashboard</a>
     <a href="tampil_jdwl.php">Jadwal Bus</a>
     <a href="#">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
