@@ -90,7 +90,7 @@ $db = new Database();
 
 <div class="content">
 <div class="px-5 py-2">
-    <h3>JADWAL PERJALANAN BUS</h3>
+    <img src="" alt="">
 </div>
 </div>
 

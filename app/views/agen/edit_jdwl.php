@@ -20,7 +20,6 @@ if (isset($_GET['id_jadwal'])) {
 
     $data = mysqli_fetch_assoc($result);
 } else {
-    die("ID Jadwal tidak valid.");
 }
 ?>
 

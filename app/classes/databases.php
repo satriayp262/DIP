@@ -86,12 +86,18 @@ class database{
     }
 
     public function tampil_penumpang() {
-        // Implementasi untuk mengambil data penumpang dari database
-        // Misalnya, menggunakan query SQL
-        $query = "SELECT * FROM penumpang(agen)";
-        $result = $this->koneksi->query($query); // Metode ini harus diimplementasikan sesuai kebutuhan
+    try {
+        $query = "SELECT * FROM tabel_penumpang";
+        $result = $this->koneksi($query); // Anggap Anda memiliki metode seperti executeQuery
 
-        // Mengembalikan hasil dalam bentuk array
-        return $result;
+        // Ambil hasil sebagai array asosiatif
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    } catch (mysqli_sql_exception $e) {
+        // Tangani pengecualian, misalnya, log error
+        die("Error: " . $e->getMessage());
     }
+}
+
 }
