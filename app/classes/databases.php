@@ -33,9 +33,20 @@ class database{
         return $data;
     }
 
-    function tambah_jdwl($id_bus,$tujuan,$kelas,$jam_datang,$jam_berangkat){
-        mysqli_query($this->koneksi,"insert into jadwal (id_bus,tujuan,kelas,jam_datang,jam_berangkat) values('$id_bus','$tujuan','$kelas','$jam_datang','$jam_berangkat')");
-    }
+    function tambah_jdwl($id_bus, $tujuan, $kelas, $jam_datang, $jam_berangkat)
+{
+    $stmt = $this->koneksi->prepare("INSERT INTO jadwal (id_bus, tujuan, kelas, jam_datang, jam_berangkat) VALUES (?, ?, ?, ?, ?)");
+    
+    // Bind parameters
+    $stmt->bind_param("issss", $id_bus, $tujuan, $kelas, $jam_datang, $jam_berangkat);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Close the statement
+    $stmt->close();
+}
+
 
     function edit($id){
         $hasil=array();
