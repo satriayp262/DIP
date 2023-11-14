@@ -1,9 +1,6 @@
 <?php
 include '../../classes/databases.php';
 include '../../../public/script.php';
-
-// Instansiasi class database
-$db = new Database();
 ?>
 
 <!DOCTYPE html>

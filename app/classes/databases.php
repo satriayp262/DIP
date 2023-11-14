@@ -34,70 +34,12 @@ class database{
     }
 
 
-    function tambahJadwal($koneksi, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
-        $idBus = mysqli_real_escape_string($koneksi, $idBus);
-        $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
-        $kelas = mysqli_real_escape_string($koneksi, $kelas);
-        $jamDatang = mysqli_real_escape_string($koneksi, $jamDatang);
-        $jamBerangkat = mysqli_real_escape_string($koneksi, $jamBerangkat);
-
-        $query = "INSERT INTO jadwal (id_bus, tujuan, kelas, jam_datang, jam_berangkat) VALUES ('$idBus', '$tujuan', '$kelas', '$jamDatang', '$jamBerangkat')";
-
-        $result = mysqli_query($koneksi, $query);
-
-        if (!$result) {
-            die("Query gagal: " . mysqli_error($koneksi));
-        } else {
-            header("Location: tampil_jdwl.php");
-            exit();
-        }
+    function tampil_penumpang(){
+        $hasil=array();
+        $data=mysqli_query($this->koneksi,"select * from penumpang");
+        while($d = mysqli_fetch_array($data)){
+            $hasil[] = $d;
+         }
+         return $hasil;
     }
-
-    function editJadwal($koneksi, $idJadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
-        $idBus = mysqli_real_escape_string($koneksi, $idBus);
-        $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
-        $kelas = mysqli_real_escape_string($koneksi, $kelas);
-        $jamDatang = mysqli_real_escape_string($koneksi, $jamDatang);
-        $jamBerangkat = mysqli_real_escape_string($koneksi, $jamBerangkat);
-
-        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamDatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$idJadwal'";
-    
-        $result = mysqli_query($koneksi, $query);
-
-        if (!$result) {
-            die("Query gagal: " . mysqli_error($koneksi));
-        } else {
-            header("Location: tampil_jdwl.php");
-            exit();
-        }
-    }
-
-    function hapusJadwal($koneksi, $idJadwal){
-        $query = "DELETE FROM jadwal WHERE id_jadwal='$idJadwal'";
-    
-        $result = mysqli_query($koneksi, $query);
-
-        if (!$result) {
-            die("Query gagal: " . mysqli_error($koneksi));
-        } else {
-            header("Location: tampil_jdwl.php");
-           exit();
-        }
-    }
-
-    public function tampil_penumpang() {
-    try {
-        $query = "SELECT * FROM tabel_penumpang";
-        $result = $this->koneksi($query); // Anggap Anda memiliki metode seperti executeQuery
-
-        // Ambil hasil sebagai array asosiatif
-        $data = $result->fetch_all(MYSQLI_ASSOC);
-
-        return $data;
-    } catch (mysqli_sql_exception $e) {
-        // Tangani pengecualian, misalnya, log error
-        die("Error: " . $e->getMessage());
-    }
-}
-
 }

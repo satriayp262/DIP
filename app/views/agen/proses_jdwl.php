@@ -7,6 +7,8 @@ if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 
+$data = array();
+
 function tambahJadwal($koneksi, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
     $idBus = mysqli_real_escape_string($koneksi, $idBus);
     $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
