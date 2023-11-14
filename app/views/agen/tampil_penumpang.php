@@ -13,8 +13,15 @@ $db = new Database();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERMINAL BUS CILACAP</title>
     <style>
-        .navbar {
-            background-color: blue;
+         .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: blue; /* Ganti dengan warna latar belakang navbar Anda */
+        color: white; /* Ganti dengan warna teks navbar Anda */
+        padding: 10px;
+        z-index: 1000; /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
         }
 
         .navbar-brand {
@@ -62,6 +69,10 @@ $db = new Database();
         .content {
             margin-left: 150px;
             padding: 16px;
+        }
+
+        body {
+        padding-top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
         }
 
         th, td {
