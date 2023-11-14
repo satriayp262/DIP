@@ -33,35 +33,65 @@ class database{
         return $data;
     }
 
-    function tambah_jdwl($id_bus, $tujuan, $kelas, $jam_datang, $jam_berangkat)
-{
-    $stmt = $this->koneksi->prepare("INSERT INTO jadwal (id_bus, tujuan, kelas, jam_datang, jam_berangkat) VALUES (?, ?, ?, ?, ?)");
-    
-    // Bind parameters
-    $stmt->bind_param("issss", $id_bus, $tujuan, $kelas, $jam_datang, $jam_berangkat);
 
-    // Execute the statement
-    $stmt->execute();
+    function tambahJadwal($koneksi, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
+        $idBus = mysqli_real_escape_string($koneksi, $idBus);
+        $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
+        $kelas = mysqli_real_escape_string($koneksi, $kelas);
+        $jamDatang = mysqli_real_escape_string($koneksi, $jamDatang);
+        $jamBerangkat = mysqli_real_escape_string($koneksi, $jamBerangkat);
 
-    // Close the statement
-    $stmt->close();
-}
+        $query = "INSERT INTO jadwal (id_bus, tujuan, kelas, jam_datang, jam_berangkat) VALUES ('$idBus', '$tujuan', '$kelas', '$jamDatang', '$jamBerangkat')";
 
+        $result = mysqli_query($koneksi, $query);
 
-    function edit($id){
-        $hasil=array();
-        $data = mysqli_query($this->koneksi,"select * from jadwal where id_jadwal='$id'");
-        while($d = mysqli_fetch_array($data)){
-            $hasil[] = $d;
+        if (!$result) {
+            die("Query gagal: " . mysqli_error($koneksi));
+        } else {
+            header("Location: tampil_jdwl.php");
+            exit();
         }
-        return $hasil;
     }
 
-    function update($id, $id_bus, $tujuan, $kelas, $jam_datang, $jam_berangkat){
-        mysqli_query($this->koneksi,"update jadwal set id_bus='$id_bus',tujuan='$tujuan' ,kelas='$kelas ,jam_datang='$jam_datang',jam_berangkat='$jam_berangkat' where id='$id'");
-    }  
+    function editJadwal($koneksi, $idJadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
+        $idBus = mysqli_real_escape_string($koneksi, $idBus);
+        $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
+        $kelas = mysqli_real_escape_string($koneksi, $kelas);
+        $jamDatang = mysqli_real_escape_string($koneksi, $jamDatang);
+        $jamBerangkat = mysqli_real_escape_string($koneksi, $jamBerangkat);
 
-    function hapus($id){
-        mysqli_query($this->koneksi,"delete from mahasiswa where id='$id'");
-    }    
+        $query = "UPDATE jadwal SET id_bus='$idBus', tujuan='$tujuan', kelas='$kelas', jam_datang='$jamDatang', jam_berangkat='$jamBerangkat' WHERE id_jadwal='$idJadwal'";
+    
+        $result = mysqli_query($koneksi, $query);
+
+        if (!$result) {
+            die("Query gagal: " . mysqli_error($koneksi));
+        } else {
+            header("Location: tampil_jdwl.php");
+            exit();
+        }
+    }
+
+    function hapusJadwal($koneksi, $idJadwal){
+        $query = "DELETE FROM jadwal WHERE id_jadwal='$idJadwal'";
+    
+        $result = mysqli_query($koneksi, $query);
+
+        if (!$result) {
+            die("Query gagal: " . mysqli_error($koneksi));
+        } else {
+            header("Location: tampil_jdwl.php");
+           exit();
+        }
+    }
+
+    public function tampil_penumpang() {
+        // Implementasi untuk mengambil data penumpang dari database
+        // Misalnya, menggunakan query SQL
+        $query = "SELECT * FROM penumpang(agen)";
+        $result = $this->koneksi->query($query); // Metode ini harus diimplementasikan sesuai kebutuhan
+
+        // Mengembalikan hasil dalam bentuk array
+        return $result;
+    }
 }

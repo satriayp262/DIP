@@ -14,7 +14,14 @@ $db = new Database();
     <title>TERMINAL BUS CILACAP</title>
     <style>
         .navbar {
-            background-color: blue;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: blue; /* Ganti dengan warna latar belakang navbar Anda */
+        color: white; /* Ganti dengan warna teks navbar Anda */
+        padding: 10px;
+        z-index: 1000; /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
         }
 
         .navbar-brand {
@@ -64,6 +71,10 @@ $db = new Database();
             padding: 16px;
         }
 
+        body {
+        padding-top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
+        }
+
         th, td {
             padding: 8px;
             text-align: center; 
@@ -94,7 +105,7 @@ $db = new Database();
 <div class="sidebar">
     <a href="dashboard.php">Dashboard</a>
     <a href="tampil_jdwl.php">Jadwal Bus</a>
-    <a href="#">Penumpang</a>
+    <a href="tampil_penumpang.php">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
 </div>
 
@@ -102,7 +113,7 @@ $db = new Database();
 <div class="px-5 py-2">
     <h3>JADWAL PERJALANAN BUS</h3>
 
-    <a href="input_jdwl.php" class="btn btn-primary mb-3 float-start">Tambah Jadwal</a>
+    <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start">Tambah Jadwal</a>
 
     <table class="table table-striped">
         <thead class="table-primary">
