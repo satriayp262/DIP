@@ -29,6 +29,7 @@ function tambahJadwal($koneksi, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangk
 }
 
 function editJadwal($koneksi, $idJadwal, $idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat){
+    $idJadwal = mysqli_real_escape_string($koneksi, $idJadwal);
     $idBus = mysqli_real_escape_string($koneksi, $idBus);
     $tujuan = mysqli_real_escape_string($koneksi, $tujuan);
     $kelas = mysqli_real_escape_string($koneksi, $kelas);

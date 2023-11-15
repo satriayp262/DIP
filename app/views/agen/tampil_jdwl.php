@@ -140,7 +140,7 @@ $db = new Database();
                     <td><?php echo $x['jam_datang'] ?></td>
                     <td><?php echo $x['jam_berangkat'] ?></td>
                     <td>
-                        <a href="edit_jdwl.php" class="btn btn-warning">edit</a>
+                        <a href="edit_jdwl.php?id_jadwal=<?=$x["id_jadwal"];?>" class="btn btn-warning">edit</a>
                         <a href="proses_jdwl.php" class="btn btn-danger">hapus</a>
                     </td>
                 </tr>

@@ -17,18 +17,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Query ke database untuk mencocokkan data login
-    $query = "SELECT * FROM user WHERE username = $username AND password = $password";
-    $stmt = $koneksi->prepare($query);
-    $stmt->bind_param("ss", $username, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $query = mysqli_query($koneksi, "SELECT * FROM user where username='$username' && password ='$password'");
+    // $stmt = $koneksi->prepare($query);
+    // $stmt->bind_param("ss", $username, $password);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
+    $cek = mysqli_num_rows($query);
 
-    if ($result->num_rows == 1) {
-        $user = $result->fetch_assoc();
+    if ($cek>0) {
+        // $user = $result->fetch_assoc();
 
         // Set sesi untuk user yang sudah login
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['level'] = $user['level'];
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
 
         // Redirect ke halaman sesuai level user
         if ($user['level'] === 'admin') {

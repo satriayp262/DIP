@@ -1,6 +1,7 @@
 <?php
 include '../../../public/script.php';
 
+$koneksi = mysqli_connect("localhost", "root", "", "penjadwalan");
 
 if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
