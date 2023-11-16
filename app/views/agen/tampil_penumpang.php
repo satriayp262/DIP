@@ -18,10 +18,10 @@ $db = new Database();
         top: 0;
         left: 0;
         width: 100%;
-        background-color: blue; /* Ganti dengan warna latar belakang navbar Anda */
-        color: white; /* Ganti dengan warna teks navbar Anda */
+        background-color: blue; 
+        color: white; 
         padding: 10px;
-        z-index: 1000; /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
+        z-index: 1000; 
         }
 
         .navbar-brand {
@@ -72,7 +72,7 @@ $db = new Database();
         }
 
         body {
-        padding-top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
+        padding-top: 60px; 
         }
 
         th, td {
@@ -110,9 +110,10 @@ $db = new Database();
     <div class="content">
         <div class="px-5 py-2">
             <h3>DAFTAR JUMLAH PENUMPANG BULANAN</h3>
-
+        <div>
             <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start">Tambah Data Jumlah</a>
-
+        </div>
+        <div>
             <table class="table table-striped">
                 <thead class="table-primary">
                     <tr>
@@ -143,6 +144,7 @@ $db = new Database();
                     ?>
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 

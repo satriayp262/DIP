@@ -1,20 +1,27 @@
 <?php
+include '../../classes/databases.php';
 include '../../../public/script.php';
 
-$koneksi = mysqli_connect("localhost", "root", "", "penjadwalan");
+$db = new database(); // Membuat objek dari kelas database
+$koneksi = $db->koneksi; // Mengambil koneksi dari objek database
 
-// Cek koneksi
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Ambil data yang dikirimkan dari formulir
+    $idBus = $_POST['bus'];
+    $tujuan = $_POST['tujuan'];
+    $kelas = $_POST['kelas'];
+    $jamDatang = $_POST['jam_datang'];
+    $jamBerangkat = $_POST['jam_berangkat'];
 
-// Query untuk mengambil nama-nama bus dari tabel bus
-$query = "SELECT id_bus, nama_bus FROM bus";
-$result = mysqli_query($koneksi, $query);
-
-// Mengecek apakah query berhasil dijalankan
-if (!$result) {
-    die("Query gagal: " . mysqli_error($koneksi));
+    // Lakukan pengecekan data
+    if (!empty($idBus) && !empty($tujuan) && !empty($kelas) && !empty($jamDatang) && !empty($jamBerangkat)) {
+        // Insert data ke database
+        $db->tambah_jadwal($idBus, $tujuan, $kelas, $jamDatang, $jamBerangkat);
+        header("Location: tampil_jdwl.php?success=tambah");
+        exit();
+    } else {
+        echo "Harap lengkapi semua isian.";
+    }
 }
 ?>
 
@@ -35,6 +42,10 @@ if (!$result) {
                     <td>
                         <select name="bus" id="bus">
                             <?php
+                            // Query untuk mengambil nama-nama bus dari tabel bus
+                            $query = "SELECT id_bus, nama_bus FROM bus";
+                            $result = mysqli_query($koneksi, $query);
+
                             // Loop untuk menampilkan nama-nama bus dalam dropdown
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<option value='{$row['id_bus']}'>{$row['nama_bus']}</option>";

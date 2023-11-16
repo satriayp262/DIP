@@ -115,6 +115,27 @@ $db = new Database();
 
     <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start">Tambah Jadwal</a>
 
+    <?php 
+    if(isset($_GET['success']) && $_GET['success'] == "tambah"){
+     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+     Data Mahasiswa Berhasil Ditambahkan!
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    elseif(isset($_GET['success']) && $_GET['success'] == "update"){
+     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+     Data Mahasiswa Berhasil Diedit!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    elseif(isset($_GET['success']) && $_GET['success'] == "hapus"){
+     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+     Data Mahasiswa Berhasil Dihapus!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+    ?>
+
     <table class="table table-striped">
         <thead class="table-primary">
             <tr>
@@ -140,8 +161,8 @@ $db = new Database();
                     <td><?php echo $x['jam_datang'] ?></td>
                     <td><?php echo $x['jam_berangkat'] ?></td>
                     <td>
-                        <a href="edit_jdwl.php?id_jadwal=<?=$x["id_jadwal"];?>" class="btn btn-warning">edit</a>
-                        <a href="proses_jdwl.php" class="btn btn-danger">hapus</a>
+                        <a href="edit_jdwl.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=edit" class="btn btn-warning">edit</a>
+                        <a href="proses_jdwl.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=hapus" class="btn btn-danger">hapus</a>
                     </td>
                 </tr>
             <?php
