@@ -14,7 +14,7 @@ $db = new database();
 <body>
     <h3 class="text-center mt-5">EDIT JADWAL BUS</h3>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-        <form action="proses_jdwl.php" method="post">
+        <form action="proses_jdwl.php?aksi=update" method="post">
         <?php
         $editData = $db->edit_jadwal($_GET['id_jadwal']);
         foreach ($editData as $data){
@@ -23,9 +23,9 @@ $db = new database();
 
             <table class="table">
                 <tr>
-                    <td><label for="bus">Nama Bus:</label></td>
+                    <td><label for="id_bus">Nama Bus:</label></td>
                     <td>
-                        <select name="id_bus" id="bus">
+                        <select name="id_bus" id="id_bus">
                             <?php
                             // Menampilkan nama-nama bus dari tabel bus
                             $daftarBus = $db->tampil_jadwal(); // Mengambil daftar bus dari database

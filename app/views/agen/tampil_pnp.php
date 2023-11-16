@@ -103,7 +103,7 @@ $db = new Database();
     <div class="sidebar">
         <a href="dashboard.php">Dashboard</a>
         <a href="tampil_jdwl.php">Jadwal Bus</a>
-        <a href="tampil_penumpang.php">Penumpang</a>
+        <a href="tampil_pnp.php" style="background-color:cornflowerblue">Penumpang</a>
         <a href="#" style="margin-top: 350px;">Logout</a>
     </div>
 
@@ -111,7 +111,29 @@ $db = new Database();
         <div class="px-5 py-2">
             <h3>DAFTAR JUMLAH PENUMPANG BULANAN</h3>
         <div>
-            <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start">Tambah Data Jumlah</a>
+            <a href="tambah_pnp.php" class="btn btn-primary mb-3 float-start">Tambah Data Jumlah</a>
+        </div>
+        <div>
+        <?php 
+        if(isset($_GET['success']) && $_GET['success'] == "tambah"){
+         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+         Data Jumlah Penumpang Berhasil Ditambahkan!
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        }
+        elseif(isset($_GET['success']) && $_GET['success'] == "update"){
+         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+         Data Jumlah Penumpang Berhasil Diedit!
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+        }
+        elseif(isset($_GET['success']) && $_GET['success'] == "hapus"){
+         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+         Data Jumlah Penumpang Berhasil Dihapus!
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>';
+        }
+         ?>
         </div>
         <div>
             <table class="table table-striped">
@@ -135,8 +157,8 @@ $db = new Database();
                             <td><?php echo $x['bulan'] ?></td>
                             <td><?php echo $x['jumlah'] ?></td>
                             <td>
-                                <a href="#" class="btn btn-warning">edit</a>
-                                <a href="#" class="btn btn-danger">hapus</a>
+                                <a href="edit_pnp.php?id_pa=<?php echo $x['id_pa']; ?>&aksi=edit" class="btn btn-warning">edit</a>
+                                <a href="proses_pnp.php?id_pa=<?php echo $x['id_pa']; ?>&aksi=hapus" class="btn btn-danger">hapus</a>
                             </td>
                         </tr>
                     <?php

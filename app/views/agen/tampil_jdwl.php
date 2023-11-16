@@ -104,8 +104,8 @@ $db = new Database();
 
 <div class="sidebar">
     <a href="dashboard.php">Dashboard</a>
-    <a href="tampil_jdwl.php">Jadwal Bus</a>
-    <a href="tampil_penumpang.php">Penumpang</a>
+    <a href="tampil_jdwl.php" style="background-color:cornflowerblue">Jadwal Bus</a>
+    <a href="tampil_pnp.php">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
 </div>
 
@@ -118,19 +118,19 @@ $db = new Database();
     <?php 
     if(isset($_GET['success']) && $_GET['success'] == "tambah"){
      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-     Data Mahasiswa Berhasil Ditambahkan!
+     Data Jadwal Bus Berhasil Ditambahkan!
      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
     }
     elseif(isset($_GET['success']) && $_GET['success'] == "update"){
      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-     Data Mahasiswa Berhasil Diedit!
+     Data Jadwal Bus Berhasil Diedit!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
     }
     elseif(isset($_GET['success']) && $_GET['success'] == "hapus"){
      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-     Data Mahasiswa Berhasil Dihapus!
+     Data Jadwal Bus Berhasil Dihapus!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
     }

@@ -44,12 +44,33 @@ class database {
     }
 
     // Operasi terkait penumpang
-    function tampil_penumpang() {
-        $hasil = array();
-        $data = mysqli_query($this->koneksi, "SELECT * FROM penumpang");
-        while ($d = mysqli_fetch_array($data)) {
+    function tampil_penumpang(){
+        $hasil=array();
+        $data=mysqli_query($this->koneksi,"select * from penumpang");
+        while($d = mysqli_fetch_array($data)){
+            $hasil[] = $d;
+         }
+         return $hasil;
+    }
+
+    function tambah_penumpang($namaPO,$bulan,$jumlah){
+        mysqli_query($this->koneksi,"insert into penumpang (nama_po,bulan,jumlah) values('$namaPO','$bulan','$jumlah')");
+    }
+
+    function edit_penumpang($idPA){
+        $hasil=array();
+        $data = mysqli_query($this->koneksi,"select * from penumpang where id_pa='$idPA'");
+        while($d = mysqli_fetch_array($data)){
             $hasil[] = $d;
         }
         return $hasil;
     }
+
+    function update_penumpang($idPA, $namaPO, $bulan, $jumlah){
+        mysqli_query($this->koneksi,"update penumpang set nama_po='$namaPO',bulan='$bulan' ,jumlah='$jumlah' where id_pa='$idPA'");
+    }  
+
+    function hapus_penumpang($idPA){
+        mysqli_query($this->koneksi,"delete from penumpang where id_pa='$idPA'");
+    }    
 }

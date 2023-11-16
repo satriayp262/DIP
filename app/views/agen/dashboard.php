@@ -90,9 +90,9 @@ include '../../../public/script.php';
 </div>
 
 <div class="sidebar">
-    <a href="dashboard.php">Dashboard</a>
+    <a href="dashboard.php" style="background-color:cornflowerblue">Dashboard</a>
     <a href="tampil_jdwl.php">Jadwal Bus</a>
-    <a href="tampil_penumpang.php">Penumpang</a>
+    <a href="tampil_pnp.php">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
 </div>
 

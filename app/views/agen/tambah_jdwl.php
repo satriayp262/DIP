@@ -38,9 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="proses_jdwl.php?aksi=tambah" method="post">
             <table class="table">
                 <tr>
-                    <td><label for="bus">Nama Bus:</label></td>
+                    <td><label for="id_bus">Nama Bus:</label></td>
                     <td>
-                        <select name="bus" id="bus">
+                        <select name="id_bus" id="id_bus">
                             <?php
                             // Query untuk mengambil nama-nama bus dari tabel bus
                             $query = "SELECT id_bus, nama_bus FROM bus";
