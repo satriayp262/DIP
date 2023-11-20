@@ -78,7 +78,6 @@ include '../../../public/script.php';
 </head
 >
 <body>
-<div class="container">
 <div>
     <nav class="navbar bg-tertiary">
         <div class="container-fluid">
@@ -98,12 +97,13 @@ include '../../../public/script.php';
 </div>
 
 <div class="content">
-<img src="../../../public/asset/terminal.png" alt="" style="background-size:cover;">
+        <img src="../../../public/asset/dashboard.png" alt="" style="width: 100%; max-width: 100%; height: auto;">
 </div>
+
 
 <div class="footer">
     &copy; 2023 Terminal Bus Cilacap
 </div>
-</div>
+
 </body>
 </html>
