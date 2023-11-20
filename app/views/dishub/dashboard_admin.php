@@ -90,15 +90,15 @@ include '../../../public/script.php';
 </div>
 
 <div class="sidebar">
-    <a href="dashboard.php" style="background-color:cornflowerblue">Dashboard</a>
-    <a href="tampil_jdwl.php">Jadwal Bus</a>
-    <a href="tampil_pnp.php">Penumpang</a>
+    <a href="dashboard_admin.php" style="background-color:cornflowerblue">Dashboard</a>
+    <a href="tampil_jdwl_admin.php">Jadwal Bus</a>
+    <a href="tampil_pnp_agen.php">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
 </div>
 
 <div class="content">
 <div class="px-5 py-2">
-    <img src="../../../public/asset/terminal.png" alt="" style="width: 70%">
+    <h3>INI DASHBOARD ADMIN</h3>
 </div>
 </div>
 

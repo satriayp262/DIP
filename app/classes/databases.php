@@ -11,6 +11,8 @@ class database {
         $this->koneksi = mysqli_connect($this->host, $this->username, $this->password, $this->db);
     }
 
+    //UNTUK AGEN
+
     // Operasi terkait jadwal
     function tampil_jadwal() {
         $hasil = array();
@@ -73,4 +75,8 @@ class database {
     function hapus_penumpang($idPA){
         mysqli_query($this->koneksi,"delete from penumpang where id_pa='$idPA'");
     }    
+
+    //UNTUK DISHUB
+
+    
 }

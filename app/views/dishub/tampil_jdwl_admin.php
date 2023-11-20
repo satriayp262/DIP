@@ -18,10 +18,10 @@ $db = new Database();
         top: 0;
         left: 0;
         width: 100%;
-        background-color: blue; /* Ganti dengan warna latar belakang navbar Anda */
-        color: white; /* Ganti dengan warna teks navbar Anda */
+        background-color: blue; 
+        color: white; 
         padding: 10px;
-        z-index: 1000; /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
+        z-index: 1000; 
         }
 
         .navbar-brand {
@@ -72,7 +72,7 @@ $db = new Database();
         }
 
         body {
-        padding-top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
+        padding-top: 60px; 
         }
 
         th, td {
@@ -103,9 +103,9 @@ $db = new Database();
 </div>
 
 <div class="sidebar">
-    <a href="dashboard.php">Dashboard</a>
-    <a href="tampil_jdwl.php" style="background-color:cornflowerblue">Jadwal Bus</a>
-    <a href="tampil_pnp.php">Penumpang</a>
+    <a href="dashboard_admin.php">Dashboard</a>
+    <a href="tampil_jdwl_admin.php" style="background-color:cornflowerblue">Jadwal Bus</a>
+    <a href="tampil_pnp_admin.php">Penumpang</a>
     <a href="#" style="margin-top: 350px;">Logout</a>
 </div>
 
@@ -161,8 +161,8 @@ $db = new Database();
                     <td><?php echo $x['jam_datang'] ?></td>
                     <td><?php echo $x['jam_berangkat'] ?></td>
                     <td>
-                        <a href="edit_jdwl.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=edit" class="btn btn-warning">edit</a>
-                        <a href="proses_jdwl.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=hapus" class="btn btn-danger">hapus</a>
+                        <a href="edit_jdwl_admin.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=edit" class="btn btn-warning">edit</a>
+                        <a href="proses_jdwl_admin.php?id_jadwal=<?php echo $x['id_jadwal']; ?>&aksi=hapus" class="btn btn-danger">hapus</a>
                     </td>
                 </tr>
             <?php

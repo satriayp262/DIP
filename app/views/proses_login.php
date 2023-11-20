@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirect ke halaman sesuai level user
         if ($user['level'] === 'admin') {
-            header('Location: admin.php');
+            header('Location: ../views/dishub/dashboard_admin.php');
         } else {
-            header('Location: /agen/dashboard.php');
+            header('Location: ../views/agen/dashboard.php');
         }
     } else {
         echo 'Username atau password salah.';
