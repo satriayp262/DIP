@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; // Ganti dengan nama server Anda
-$username = "root"; // Ganti dengan username database Anda
-$password = ""; // Ganti dengan password database Anda
-$dbname = "penjadwalan"; // Ganti dengan nama database Anda
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "penjadwalan"; 
 
 // Membuat koneksi
 $koneksi = new mysqli($servername, $username, $password, $dbname);
@@ -18,14 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Query ke database untuk mencocokkan data login
     $query = mysqli_query($koneksi, "SELECT * FROM user where username='$username' && password ='$password'");
-    // $stmt = $koneksi->prepare($query);
-    // $stmt->bind_param("ss", $username, $password);
-    // $stmt->execute();
-    // $result = $stmt->get_result();
     $cek = mysqli_num_rows($query);
 
     if ($cek>0) {
-        // $user = $result->fetch_assoc();
 
         // Set sesi untuk user yang sudah login
         $_SESSION['username'] = $username;
@@ -39,8 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         echo 'Username atau password salah.';
+        header('Location: login.php'); 
     }
 } else {
-    header('Location: login.php'); // Redirect jika bukan POST request
+    header('Location: login.php'); 
 }
 ?>
