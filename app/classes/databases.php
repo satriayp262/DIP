@@ -90,5 +90,39 @@ class database
 
     //UNTUK DISHUB
 
+    // Operasi terkait penumpang
+    function tampil_pnp()
+    {
+        $hasil = array();
+        $data = mysqli_query($this->koneksi, "select * from penumpang2");
+        while ($d = mysqli_fetch_array($data)) {
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
 
+    function tambah_pnp($bulan, $tahun, $jumlah)
+    {
+        mysqli_query($this->koneksi, "insert into penumpang2 (bulan,tahun,jumlah) values('$bulan','$tahun','$jumlah')");
+    }
+
+    function edit_pnp($idPnp2)
+    {
+        $hasil = array();
+        $data = mysqli_query($this->koneksi, "select * from penumpang2 where id_pnp2='$idPnp2'");
+        while ($d = mysqli_fetch_array($data)) {
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
+
+    function update_pnp($idPnp2, $bulan, $tahun, $jumlah)
+    {
+        mysqli_query($this->koneksi, "update penumpang2 set bulan='$bulan',tahun='$tahun' ,jumlah='$jumlah' where id_pnp2='$idPnp2'");
+    }
+
+    function hapus_pnp($idPnp2)
+    {
+        mysqli_query($this->koneksi, "delete from penumpang2 where id_pnp2='$idPnp2'");
+    }
 }

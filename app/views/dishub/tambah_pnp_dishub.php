@@ -12,11 +12,11 @@ include '../../../public/script.php';
 <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
   <form action="proses_pnp_agen.php?aksi=tambah" method="post">
     <div class="mb-3">
-      <label class="form-label">Nama PO</label>
+      <label class="form-label">Bulan</label>
       <input type="text" name="nama_po" class="form-control">
     </div>
     <div class="mb-3">
-      <label class="form-label">Bulan</label>
+      <label class="form-label">Tahun</label>
       <input type="text" name="bulan" class="form-control">
     </div>
     <div class="mb-3">

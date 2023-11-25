@@ -27,6 +27,7 @@
                 <input type="password" name="password" id="password" placeholder="Password">
             </div>
             <button class="btn mt-3">Login</button>
+            <a href="index.php" class="btn btn-warning" style="background-color:gold">Kembali</a>
         </form>
     </div>
 </body>

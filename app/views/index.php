@@ -1,6 +1,6 @@
 <?php
-include '../../classes/databases.php';
-include '../../../public/script.php';
+include '../classes/databases.php';
+include '../../public/script.php';
 ?>
 
 <!DOCTYPE html>
@@ -95,16 +95,15 @@ include '../../../public/script.php';
     </div>
 
     <div class="sidebar">
-        <a href="dashboard_admin.php" style="background-color:cornflowerblue">Dashboard</a>
-        <a href="tampil_jdwl_admin.php">Jadwal Bus</a>
-        <a href="tampil_pnp_agen.php">Penumpang 1</a>
-        <a href="tampil_pnp_dishub.php">Penumpang 2</a>
-        <a href="../index.php" style="margin-top: 350px;">Logout</a>
+        <a href="index.php" style="background-color:cornflowerblue">Dashboard</a>
+        <a href="jadwal_view.php">Jadwal Bus</a>
+        <a href="penumpang_view.php">Penumpang</a>
+        <a href="login.php" style="margin-top: 350px;">Login</a>
     </div>
 
     <div class="content">
         <div class="px-5 py-2">
-            <h3>INI DASHBOARD ADMIN</h3>
+            <h3>INI DASHBOARD</h3>
         </div>
     </div>
 
