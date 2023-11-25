@@ -27,11 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIAKAD</title>
 </head>
+
 <body>
     <h3 class="text-center mt-5">TAMBAH JADWAL BUS</h3>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
@@ -78,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </body>
+
 </html>
 
 <?php
