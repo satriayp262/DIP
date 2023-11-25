@@ -145,6 +145,7 @@ $db = new Database();
                             <th>No</th>
                             <th>Nama PO</th>
                             <th>Bulan</th>
+                            <th>Tahun</th>
                             <th>Jumlah</th>
                             <th>Opsi</th>
                         </tr>
@@ -158,6 +159,7 @@ $db = new Database();
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $x['nama_po'] ?></td>
                                 <td><?php echo $x['bulan'] ?></td>
+                                <td><?php echo $x['tahun'] ?></td>
                                 <td><?php echo $x['jumlah'] ?></td>
                                 <td>
                                     <a href="edit_pnp.php?id_pa=<?php echo $x['id_pa']; ?>&aksi=edit" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

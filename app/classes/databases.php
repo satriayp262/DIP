@@ -63,9 +63,9 @@ class database
         return $hasil;
     }
 
-    function tambah_penumpang($namaPO, $bulan, $jumlah)
+    function tambah_penumpang($namaPO, $bulan, $tahun, $jumlah)
     {
-        mysqli_query($this->koneksi, "insert into penumpang (nama_po,bulan,jumlah) values('$namaPO','$bulan','$jumlah')");
+        mysqli_query($this->koneksi, "insert into penumpang (nama_po,bulan,tahun,jumlah) values('$namaPO','$bulan','$tahun''$jumlah')");
     }
 
     function edit_penumpang($idPA)
@@ -78,9 +78,9 @@ class database
         return $hasil;
     }
 
-    function update_penumpang($idPA, $namaPO, $bulan, $jumlah)
+    function update_penumpang($idPA, $namaPO, $bulan, $tahun, $jumlah)
     {
-        mysqli_query($this->koneksi, "update penumpang set nama_po='$namaPO',bulan='$bulan' ,jumlah='$jumlah' where id_pa='$idPA'");
+        mysqli_query($this->koneksi, "update penumpang set nama_po='$namaPO', bulan='$bulan',  tahun='$tahun',jumlah='$jumlah' where id_pa='$idPA'");
     }
 
     function hapus_penumpang($idPA)

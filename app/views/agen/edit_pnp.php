@@ -27,6 +27,10 @@ $db = new database();
                     <input type="text" name="bulan" value="<?php echo $d['bulan'] ?>" class="form-control">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Tahun</label>
+                    <input type="text" name="tahun" value="<?php echo $d['tahun'] ?>" class="form-control">
+                </div>
+                <div class="mb-3">
                     <label class="form-label">jumlah</label>
                     <input type="text" name="jumlah" value="<?php echo $d['jumlah'] ?>" class="form-control">
                 </div>

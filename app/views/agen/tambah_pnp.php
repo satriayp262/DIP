@@ -20,6 +20,10 @@ include '../../../public/script.php';
       <input type="text" name="bulan" class="form-control">
     </div>
     <div class="mb-3">
+      <label class="form-label">Tahun</label>
+      <input type="text" name="tahun" class="form-control">
+    </div>
+    <div class="mb-3">
       <label class="form-label">Jumlah</label>
       <input type="text" name="jumlah" class="form-control">
     </div>

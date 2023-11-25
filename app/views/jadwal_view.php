@@ -88,6 +88,7 @@ $db = new Database();
             text-align: center;
             padding: 10px;
         }
+        
     </style>
     </style>
 </head>
@@ -114,6 +115,17 @@ $db = new Database();
     <div class="content">
         <div class="px-5 py-2">
             <h3>JADWAL PERJALANAN BUS</h3>
+
+            <div style="text-align: center;">
+                <form action="proses_pencarian.php" method="get">
+                    <input type="text" id="keyword" name="keyword" placeholder="Cari Jadwal">
+
+                    <button type="submit" class="btn btn-primary">Cari</button>
+
+                </form>
+            </div>
+
+
             <table class="table table-striped">
                 <thead class="table-primary">
                     <tr>

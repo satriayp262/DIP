@@ -105,11 +105,11 @@ $db = new Database();
     </div>
 
     <div class="sidebar">
-        <a href="dashboard_admin.php" style="background-color:cornflowerblue">Dashboard</a>
-        <a href="tampil_jdwl_admin.php">Jadwal Bus</a>
+        <a href="dashboard_admin.php">Dashboard</a>
+        <a href="tampil_jdwl_admin.php"  style="background-color:cornflowerblue">Jadwal Bus</a>
         <a href="tampil_pnp_agen.php">Penumpang 1</a>
         <a href="tampil_pnp_dishub.php">Penumpang 2</a>
-        <a href="../index.php" style="margin-top: 350px;">Logout</a>
+        <a href="../index.php" style="margin-top: 310px;">Logout</a>
     </div>
 
     <div class="content">
