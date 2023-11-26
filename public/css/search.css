@@ -1,0 +1,44 @@
+body {
+    background-color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  
+  .search {
+    position: relative;
+    box-shadow: 0 0 20px rgba(51, 51, 51, 0.1);
+    border-radius: 50px; /* Menambahkan lengkungan pada elemen .search */
+    overflow: hidden; /* Mengatasi agar border-radius berfungsi dengan baik */
+    max-width: 300px; /* Mengatur lebar maksimum elemen .search */
+    margin: 0 auto; /* Pusatkan elemen .search */
+  }
+  
+  .search input {
+    height: 40px; /* Mengurangi tinggi input */
+    text-indent: 15px;
+    border: 2px solid #d6d4d4;
+    border-radius: 50px 0 0 50px; /* Menambahkan lengkungan pada sisi kiri input */
+    width: calc(100% - 70px); /* Mengatur lebar input agar sesuai dengan perubahan ukuran */
+  }
+  
+  .search input:focus {
+    box-shadow: none;
+    border: 2px solid blue;
+  }
+  
+  .search .fa-search {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+  }
+  
+  .search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px; /* Mengurangi tinggi tombol */
+    width: 70px; /* Merubah lebar tombol tanpa mengubah panjangnya */
+    background: blue;
+    border-radius: 0 50px 50px 0; /* Menambahkan lengkungan pada sisi kanan tombol */
+  }
+  

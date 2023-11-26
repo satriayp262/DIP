@@ -8,6 +8,7 @@ $db = new Database();
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../../public/css/search.css">
 
 <head>
     <meta charset="UTF-8">
@@ -88,7 +89,6 @@ $db = new Database();
             text-align: center;
             padding: 10px;
         }
-        
     </style>
     </style>
 </head>
@@ -116,13 +116,14 @@ $db = new Database();
         <div class="px-5 py-2">
             <h3>JADWAL PERJALANAN BUS</h3>
 
-            <div style="text-align: center;">
-                <form action="proses_pencarian.php" method="get">
-                    <input type="text" id="keyword" name="keyword" placeholder="Cari Jadwal">
-
-                    <button type="submit" class="btn btn-primary">Cari</button>
-
-                </form>
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Cari Tujuan">
+                        <button class="btn btn-primary">Cari</button>
+                    </div>
+                </div>
             </div>
 
 

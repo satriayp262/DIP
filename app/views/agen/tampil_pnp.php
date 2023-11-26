@@ -107,7 +107,7 @@ $db = new Database();
         <a href="dashboard.php">Dashboard</a>
         <a href="tampil_jdwl.php">Jadwal Bus</a>
         <a href="tampil_pnp.php" style="background-color:cornflowerblue">Penumpang</a>
-        <a href="#" style="margin-top: 350px;">Logout</a>
+        <a href="../index.php" style="margin-top: 350px;">Logout</a>
     </div>
 
     <div class="content">

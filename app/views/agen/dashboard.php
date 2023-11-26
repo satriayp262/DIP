@@ -98,7 +98,7 @@ include '../../../public/script.php';
         <a href="dashboard.php" style="background-color:cornflowerblue">Dashboard</a>
         <a href="tampil_jdwl.php">Jadwal Bus</a>
         <a href="tampil_pnp.php">Penumpang</a>
-        <a href="#" style="margin-top: 350px;">Logout</a>
+        <a href="../index.php" style="margin-top: 350px;">Logout</a>
     </div>
 
     <div class="content">

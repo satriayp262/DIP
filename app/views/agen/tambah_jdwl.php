@@ -56,51 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         margin-right: 10px;
     }
 
-    .px-5 {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    table {
-        width: 70%;
-        margin: 20px auto;
-    }
-
-    .sidebar {
-        height: 100%;
-        width: 150px;
-        position: fixed;
-        background-color: whitesmoke;
-        padding-top: 5px;
-    }
-
-    .sidebar a {
-        padding: 5px 15px;
-        text-align: left;
-        text-decoration: none;
-        font-size: 18px;
-        color: black;
-        display: block;
-    }
-
-    .sidebar a:hover {
-        background-color: blue;
-        color: white;
-    }
-
     .content {
-        margin-left: 150px;
         padding: 16px;
     }
 
     body {
         padding-top: 60px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-        text-align: center;
     }
 
     .footer {
@@ -123,12 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
     </div>
 
-    <div class="sidebar">
-        <a href="dashboard.php">Dashboard</a>
-        <a href="tampil_jdwl.php" style="background-color:cornflowerblue">Jadwal Bus</a>
-        <a href="tampil_pnp.php">Penumpang</a>
-        <a href="#" style="margin-top: 350px;">Logout</a>
-    </div>
     <div class="content">
         <h3 class="text-center">TAMBAH JADWAL BUS</h3>
         <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
