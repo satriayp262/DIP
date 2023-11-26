@@ -31,7 +31,6 @@ include '../../../public/script.php';
   }
 
   .content {
-    margin-left: 150px;
     padding: 16px;
   }
 
@@ -59,7 +58,7 @@ include '../../../public/script.php';
     </nav>
   </div>
 
-  <h3 class="text-center mt-5">Tambah Data Penumpang</h3>
+  <h3 class="text-center mt-3">Tambah Data Jumlah Penumpang</h3>
   <div class="content">
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
       <form action="proses_pnp_agen.php?aksi=tambah" method="post">

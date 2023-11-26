@@ -33,7 +33,6 @@ $db = new database();
     }
 
     .content {
-        margin-left: 150px;
         padding: 16px;
     }
 
@@ -60,7 +59,7 @@ $db = new database();
             </div>
         </nav>
     </div>
-    <h3 class="text-center mt-5">Edit Data Dosen</h3>
+    <h3 class="text-center mt-5">Edit Data Jumlah Penumpang</h3>
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
         <form action="proses_pnp.php?aksi=update" method="post">
             <?php

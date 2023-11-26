@@ -57,7 +57,7 @@ include '../../../public/script.php';
       </div>
     </nav>
   </div>
-  <h3 class="text-center mt-3">Tambah Data Penumpang</h3>
+  <h3 class="text-center mt-3">Tambah Data Jumlah Penumpang</h3>
   <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
     <form action="proses_pnp.php?aksi=tambah" method="post">
       <div class="mb-3">

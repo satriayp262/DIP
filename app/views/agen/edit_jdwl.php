@@ -36,7 +36,6 @@ $db = new database();
     }
 
     .content {
-        margin-left: 150px;
         padding: 16px;
     }
 

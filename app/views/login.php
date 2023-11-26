@@ -1,4 +1,3 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +26,8 @@
                 <input type="password" name="password" id="password" placeholder="Password">
             </div>
             <button class="btn mt-3">Login</button>
-            <a href="index.php" class="btn btn-warning" style="background-color:gold">Kembali</a>
         </form>
+        <a href="index.php" class="btn mt-3" style="background-color: orangered; display: block; text-align: center; text-decoration: none; color: #fff; border: none; border-radius: 25px; height: 40px; line-height: 40px; margin-top: 10px;">Kembali</a>
     </div>
 </body>
-
 </html>
