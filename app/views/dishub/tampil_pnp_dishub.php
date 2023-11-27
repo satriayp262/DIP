@@ -51,7 +51,7 @@ $db = new Database();
         height: 100%;
         width: 170px;
         position: fixed;
-        background-color: whitesmoke;
+        background-color: lightgray;
         padding-top: 5px;
     }
 
@@ -71,7 +71,6 @@ $db = new Database();
 
     .content {
         margin-left: 170px;
-        padding: 16px;
     }
 
     body {
@@ -109,10 +108,10 @@ $db = new Database();
     <div>
         <nav class="navbar bg-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand">
+                <div class="navbar-brand">
                     <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
                     Terminal Bus Cilacap
-                </a>
+                </div>
             </div>
         </nav>
     </div>
@@ -127,7 +126,7 @@ $db = new Database();
         <a href="tampil_pnp_agen.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang 1</a>
-        <a href="tampil_pnp_dishub.php" style="background-color:cornflowerblue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <a href="tampil_pnp_dishub.php" style="background-color:cornflowerblue; color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang 2</a>
         <a href="../index.php" style="margin-top: 255px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -143,6 +142,26 @@ $db = new Database();
                 <a href="tambah_pnp_dishub.php" class="btn btn-primary mb-3 float-start"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
                     </svg> Tambah Data Jumlah</a>
+            </div>
+            <div>
+                <?php
+                if (isset($_GET['success']) && $_GET['success'] == "tambah") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data Jumlah Penumpang Berhasil Ditambahkan!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data Jumlah Penumpang Berhasil Diedit!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Data Jumlah Penumpang Berhasil Dihapus!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                }
+                ?>
             </div>
             <div>
                 <table class="table table-striped">
@@ -182,10 +201,9 @@ $db = new Database();
                 </table>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2023 Terminal Bus Cilacap
+        <div class="footer">
+            &copy; 2023 Terminal Bus Cilacap
+        </div>
     </div>
 </body>
 

@@ -51,7 +51,7 @@ $db = new Database();
         height: 100%;
         width: 170px;
         position: fixed;
-        background-color: whitesmoke;
+        background-color: lightgray;
         padding-top: 5px;
     }
 
@@ -71,7 +71,6 @@ $db = new Database();
 
     .content {
         margin-left: 170px;
-        padding: 16px;
     }
 
     body {
@@ -106,13 +105,13 @@ $db = new Database();
 </style>
 
 <body>
-    <div>
+<div>
         <nav class="navbar bg-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand">
+                <div class="navbar-brand">
                     <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
                     Terminal Bus Cilacap
-                </a>
+                </div>
             </div>
         </nav>
     </div>
@@ -124,7 +123,7 @@ $db = new Database();
         <a href="tampil_jdwl_admin.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
             </svg> Jadwal Bus</a>
-        <a href="tampil_pnp_agen.php" style="background-color:cornflowerblue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <a href="tampil_pnp_agen.php" style="background-color:cornflowerblue, color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang 1</a>
         <a href="tampil_pnp_dishub.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -139,28 +138,6 @@ $db = new Database();
     <div class="content">
         <div class="px-5 py-2">
             <h3>DAFTAR JUMLAH PENUMPANG BULANAN</h3>
-
-            <div>
-                <?php
-                if (isset($_GET['success']) && $_GET['success'] == "tambah") {
-                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                    Data Jumlah Penumpang Berhasil Ditambahkan!
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-                } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
-                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                    Data Jumlah Penumpang Berhasil Diedit!
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-                } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
-                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    Data Jumlah Penumpang Berhasil Dihapus!
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-                }
-                ?>
-            </div>
-
             <div>
                 <table class="table table-striped">
                     <thead class="table-primary">
@@ -200,10 +177,10 @@ $db = new Database();
                 </table>
             </div>
         </div>
-    </div>
 
-    <div class="footer">
-        &copy; 2023 Terminal Bus Cilacap
+        <div class="footer">
+            &copy; 2023 Terminal Bus Cilacap
+        </div>
     </div>
 </body>
 

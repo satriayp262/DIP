@@ -44,7 +44,7 @@ include '../../../public/script.php';
             height: 100%;
             width: 150px;
             position: fixed;
-            background-color: whitesmoke;
+            background-color: lightgray;
             padding-top: 5px;
         }
 
@@ -64,12 +64,10 @@ include '../../../public/script.php';
 
         .content {
             margin-left: 150px;
-            padding: 16px;
         }
 
         body {
             padding-top: 60px;
-            /* Sesuaikan dengan tinggi navbar Anda */
         }
 
         .footer {
@@ -108,7 +106,7 @@ include '../../../public/script.php';
     </div>
 
     <div class="sidebar">
-        <a href="dashboard.php" style="background-color:cornflowerblue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <a href="dashboard.php" style="background-color:cornflowerblue; color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
             </svg> Dashboard</a>
         <a href="tampil_jdwl.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
@@ -124,14 +122,12 @@ include '../../../public/script.php';
     </div>
 
     <div class="content">
-        <img src="../../../public/asset/dashboard.png" alt="" style="width: 100%; max-width: 100%; height: auto;">
+        <img src="../../../public/asset/Frame 1.png" alt="" style="width: 100%; max-width: 100%; height: auto;">
+        <div class="garis"></div>
+        <div class="footer">
+            &copy; 2023 Terminal Bus Cilacap
+        </div>
     </div>
-
-
-    <div class="footer">
-        &copy; 2023 Terminal Bus Cilacap
-    </div>
-
 </body>
 
 </html>

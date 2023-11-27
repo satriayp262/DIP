@@ -52,7 +52,7 @@ $db = new Database();
             height: 100%;
             width: 150px;
             position: fixed;
-            background-color: whitesmoke;
+            background-color: lightgray;
             padding-top: 5px;
         }
 
@@ -72,7 +72,6 @@ $db = new Database();
 
         .content {
             margin-left: 150px;
-            padding: 16px;
         }
 
         body {
@@ -125,7 +124,7 @@ $db = new Database();
         <a href="dashboard.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
             </svg> Dashboard</a>
-        <a href="tampil_jdwl.php" style="background-color:cornflowerblue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+        <a href="tampil_jdwl.php" style="background-color:cornflowerblue; color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
             </svg> Jadwal Bus</a>
         <a href="tampil_pnp.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -148,19 +147,19 @@ $db = new Database();
             <?php
             if (isset($_GET['success']) && $_GET['success'] == "tambah") {
                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-     Data Jadwal Bus Berhasil Ditambahkan!
-     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>';
+                Data Jadwal Bus Berhasil Ditambahkan!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
             } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-     Data Jadwal Bus Berhasil Diedit!
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>';
+                Data Jadwal Bus Berhasil Diedit!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
             } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
                 echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-     Data Jadwal Bus Berhasil Dihapus!
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>';
+                Data Jadwal Bus Berhasil Dihapus!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
             }
             ?>
 
@@ -204,11 +203,11 @@ $db = new Database();
                 </tbody>
             </table>
         </div>
+        <div class="footer">
+            &copy; 2023 Terminal Bus Cilacap
+        </div>
     </div>
 
-    <div class="footer">
-        &copy; 2023 Terminal Bus Cilacap
-    </div>
 
 </body>
 
