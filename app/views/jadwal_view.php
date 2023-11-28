@@ -8,7 +8,6 @@ $db = new Database();
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="../../public/css/search.css">
 
 <head>
     <meta charset="UTF-8">
@@ -106,7 +105,6 @@ $db = new Database();
             vertical-align: middle;
         }
     </style>
-    </style>
 </head>
 
 <body>
@@ -142,44 +140,47 @@ $db = new Database();
     <div class="content">
         <div class="px-5 py-2">
             <h3>JADWAL PERJALANAN BUS</h3>
-
-            <div class="row height d-flex justify-content-center align-items-center">
-                <form method="post" action="proses_pencarian.php">
-                    <input type="text" name="tujuan">
-                    <input type="submit" name="submit" value="Cari">
-                </form>
-            </div>
-
-            <table class="table table-striped data-table">
-                <thead class="table-primary">
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Bus</th>
-                        <th>Tujuan</th>
-                        <th>Kelas</th>
-                        <th>Jam Kedatangan</th>
-                        <th>Jam Keberangkatan</th>
-                    </tr>
-                </thead>
-                <tbody class="table-light">
-                    <?php
-                    $no = 1;
-                    foreach ($db->tampil_jadwal() as $x) {
-                    ?>
-                        <tr>
-                            <td><?php echo $no++ ?></td>
-                            <td><?php echo $x['nama_bus'] ?></td>
-                            <td><?php echo $x['tujuan'] ?></td>
-                            <td><?php echo $x['kelas'] ?></td>
-                            <td><?php echo $x['jam_datang'] ?></td>
-                            <td><?php echo $x['jam_berangkat'] ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
         </div>
+
+        <div class="search-container" style="text-align: center;">
+            <form action="proses_pencarian.php" method="get" class="search-form">
+                <div style="display: inline-flex; border-radius: 25px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                    <input type="text" id="keyword" name="keyword" placeholder="Cari Tujuan Anda" style="padding: 10px; border: none; border-radius: 25px 0 0 25px; outline: none; width: 300px;">
+                    <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border: none; background-color: #007bff; color: #fff; border-radius: 0 25px 25px 0; cursor: pointer; transition: background-color 0.3s ease;">Cari</button>
+                </div>
+            </form>
+        </div>
+
+
+        <table class="table table-striped data-table">
+            <thead class="table-primary">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Bus</th>
+                    <th>Tujuan</th>
+                    <th>Kelas</th>
+                    <th>Jam Kedatangan</th>
+                    <th>Jam Keberangkatan</th>
+                </tr>
+            </thead>
+            <tbody class="table-light">
+                <?php
+                $no = 1;
+                foreach ($db->tampil_jadwal() as $x) {
+                ?>
+                    <tr>
+                        <td><?php echo $no++ ?></td>
+                        <td><?php echo $x['nama_bus'] ?></td>
+                        <td><?php echo $x['tujuan'] ?></td>
+                        <td><?php echo $x['kelas'] ?></td>
+                        <td><?php echo $x['jam_datang'] ?></td>
+                        <td><?php echo $x['jam_berangkat'] ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
 
         <div class="footer">
             &copy; 2023 Terminal Bus Cilacap

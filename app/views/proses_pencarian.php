@@ -1,6 +1,16 @@
 <?php
-// Termasuk file koneksi database
-include '../classes/databases.php';
+// File databases.php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "penjadwalan";
+
+$koneksi = new mysqli($host, $user, $password, $database);
+
+// Periksa koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi database gagal: " . $koneksi->connect_error);
+}
 
 if (isset($_GET['keyword'])) {
     // Proses kata kunci pencarian
@@ -18,10 +28,9 @@ if (isset($_GET['keyword'])) {
 
         $no = 1;
         while ($row = $result->fetch_assoc()) {
-            echo 'window.location.href = "jadwal_view.php";';
             echo "<tr>";
             echo "<td>" . $no++ . "</td>";
-            echo "<td>" . $row['nama_bus'] . "</td>";
+            echo "<td>" . $row['id_bus'] . "</td>";
             echo "<td>" . $row['tujuan'] . "</td>";
             echo "<td>" . $row['kelas'] . "</td>";
             echo "<td>" . $row['jam_datang'] . "</td>";
