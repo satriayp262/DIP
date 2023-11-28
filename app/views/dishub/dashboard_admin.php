@@ -73,6 +73,19 @@ include '../../../public/script.php';
         /* Sesuaikan dengan tinggi navbar Anda */
     }
 
+    .container {
+        width: 95%;
+        /* Sesuaikan lebar container sesuai kebutuhan */
+        margin: 0 auto;
+        /* Membuat container berada di tengah */
+        text-align: justify;
+        /* Mengatur rata kanan-kiri */
+    }
+
+    .container h3 {
+        text-align: center;
+    }
+
     .footer {
         background-color: blue;
         color: white;
@@ -128,6 +141,12 @@ include '../../../public/script.php';
     <div class="content">
         <img src="../../../public/asset/Frame 1.png" alt="" style="width: 100%; max-width: 100%; height: auto;">
         <div class="garis"></div>
+        <div class="container">
+            <h3>Selamat Datang Di Halaman Admin!</h3>
+            <h5>Dashboard admin Terminal Bus Cilacap menjadi kendali utama bagi pengelola untuk memantau dan mengelola operasional terminal dengan efisien. Dengan informasi yang terkini tentang jadwal keberangkatan dan kedatangan bus,
+                serta pemantauan penjualan tiket, pengguna dapat melacak performa armada dengan cepat dan mudah. Fitur analisis data yang komprehensif memungkinkan pengambilan keputusan yang tepat, sementara fokus pada keamanan data 
+                dan koordinasi tim yang efektif memastikan operasional yang aman dan efisien.</h6>
+        </div>
         <div class="footer">
             &copy; 2023 Terminal Bus Cilacap
         </div>

@@ -139,29 +139,31 @@ $db = new Database();
     <div class="content">
         <div class="px-5 py-2">
             <h3>JADWAL PERJALANAN BUS</h3>
-
-            <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
-                </svg> Tambah Jadwal</a>
-
-            <?php
-            if (isset($_GET['success']) && $_GET['success'] == "tambah") {
-                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div>
+                <a href="tambah_jdwl.php" class="btn btn-primary mb-3 float-start"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                    </svg> Tambah Jadwal</a>
+            </div>
+            <div class="mt-5">
+                <?php
+                if (isset($_GET['success']) && $_GET['success'] == "tambah") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data Jadwal Bus Berhasil Ditambahkan!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
-            } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
-                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data Jadwal Bus Berhasil Diedit!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
-            } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
-                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 Data Jadwal Bus Berhasil Dihapus!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
-            }
-            ?>
+                }
+                ?>
+            </div>
 
             <table class="table table-striped">
                 <thead class="table-primary">

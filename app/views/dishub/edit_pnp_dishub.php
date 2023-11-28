@@ -61,22 +61,21 @@ $db = new database();
         </nav>
     </div>
 
-    <h3 class="text-center mt-3">Edit Data Jumlah Penumpang</h3>
     <div class="content">
         <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-            <form action="proses_pnp.php?aksi=update" method="post">
+            <h4 class="text-center mt-3">Form Edit Data Jumlah Penumpang</h4>
+            <form action="proses_pnp_dishub.php?aksi=update" method="post">
                 <?php
-                foreach ($db->edit_penumpang($_GET['id_pa']) as $d) {
+                foreach ($db->edit_pnp($_GET['id_pnp2']) as $d) {
                 ?>
                     <table>
                         <div class="mb-3">
-                            <label class="form-label">Nama PO</label>
-                            <input type="hidden" name="id_pa" value="<?php echo $d['id_pa'] ?>" class="form-control">
-                            <input type="text" name="nama_po" value="<?php echo $d['nama_po'] ?>" class="form-control">
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">Bulan</label>
                             <input type="text" name="bulan" value="<?php echo $d['bulan'] ?>" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tahun</label>
+                            <input type="text" name="tahun" value="<?php echo $d['tahun'] ?>" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">jumlah</label>

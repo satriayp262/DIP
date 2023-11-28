@@ -50,12 +50,12 @@ $db = new Database();
         }
 
         .sidebar {
-        height: 100%;
-        width: 150px;
-        position: fixed;
-        background-color: lightgray;
-        padding-top: 5px;
-    }
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            background-color: lightgray;
+            padding-top: 5px;
+        }
 
         .sidebar a {
             padding: 5px 15px;
@@ -144,13 +144,10 @@ $db = new Database();
             <h3>JADWAL PERJALANAN BUS</h3>
 
             <div class="row height d-flex justify-content-center align-items-center">
-                <div class="col-md-8">
-                    <div class="search">
-                        <i class="fa fa-search"></i>
-                        <input type="text" class="form-control" placeholder="Cari Tujuan Anda">
-                        <button class="btn btn-primary">Search</button>
-                    </div>
-                </div>
+                <form method="post" action="proses_pencarian.php">
+                    <input type="text" name="tujuan">
+                    <input type="submit" name="submit" value="Cari">
+                </form>
             </div>
 
             <table class="table table-striped data-table">

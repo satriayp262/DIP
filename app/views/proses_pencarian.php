@@ -18,6 +18,7 @@ if (isset($_GET['keyword'])) {
 
         $no = 1;
         while ($row = $result->fetch_assoc()) {
+            echo 'window.location.href = "jadwal_view.php";';
             echo "<tr>";
             echo "<td>" . $no++ . "</td>";
             echo "<td>" . $row['nama_bus'] . "</td>";

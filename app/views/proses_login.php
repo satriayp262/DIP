@@ -23,21 +23,17 @@ if ($cek > 0) {
 
     $data = mysqli_fetch_assoc($query);
 
-    // Redirect ke halaman sesuai level user
     if ($data['level'] == "admin") {
-
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "admin";
         header('Location: ../views/dishub/dashboard_admin.php');
     } else if ($data['level'] == "user") {
-
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "user";
         header('Location: ../views/agen/dashboard.php');
-    } else {
-        echo 'Username atau password salah.';
-        header('Location: login.php');
     }
 } else {
+    // Pesan kesalahan ketika username atau password salah
+    echo "Username atau password salah";
     header('Location: login.php');
 }

@@ -126,3 +126,4 @@ class database
         mysqli_query($this->koneksi, "delete from penumpang2 where id_pnp2='$idPnp2'");
     }
 }
+

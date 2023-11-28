@@ -62,14 +62,14 @@ include '../../../public/script.php';
   <div class="content">
     <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
     <h4 class="text-center mt-3">Form Tambah Data Jumlah Penumpang</h4>
-      <form action="proses_pnp_agen.php?aksi=tambah" method="post">
+      <form action="proses_pnp_dishub.php?aksi=tambah" method="post">
         <div class="mb-3">
           <label class="form-label">Bulan</label>
-          <input type="text" name="nama_po" class="form-control">
+          <input type="text" name="bulan" class="form-control">
         </div>
         <div class="mb-3">
           <label class="form-label">Tahun</label>
-          <input type="text" name="bulan" class="form-control">
+          <input type="text" name="tahun" class="form-control">
         </div>
         <div class="mb-3">
           <label class="form-label">Jumlah</label>
