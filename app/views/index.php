@@ -60,7 +60,7 @@ include '../../public/script.php';
 
     .sidebar {
         height: 100%;
-        width: 150px;
+        width: 170px;
         position: fixed;
         background-color: lightgray;
         padding-top: 5px;
@@ -81,7 +81,7 @@ include '../../public/script.php';
     }
 
     .content {
-        margin-left: 150px;
+        margin-left: 170px;
     }
 
     body {
@@ -118,6 +118,7 @@ include '../../public/script.php';
         width: 95%;
         /* Sesuaikan lebar container sesuai kebutuhan */
         margin: 0 auto;
+        margin-top: 10px;
         /* Membuat container berada di tengah */
         text-align: justify;
         /* Mengatur rata kanan-kiri */

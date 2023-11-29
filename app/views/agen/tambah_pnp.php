@@ -9,81 +9,81 @@ include '../../../public/script.php';
 </head>
 
 <style>
-      /* Style the navbar */
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: blue;
-        /* Warna biru */
-        color: white;
-        padding: 10px 20px;
-        /* Padding atas dan bawah disesuaikan */
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        /* Tambahkan shadow untuk efek visual */
-        z-index: 1000;
-    }
+  /* Style the navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    /* Warna biru */
+    color: white;
+    padding: 10px 20px;
+    /* Padding atas dan bawah disesuaikan */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Tambahkan shadow untuk efek visual */
+    z-index: 1000;
+  }
 
-    /* Style the logo and website name */
-    .logo img {
-        width: 40px;
-        /* Ukuran logo dikurangi */
-        height: 40px;
-        /* Ukuran logo dikurangi */
-        margin-right: 10px;
-    }
+  /* Style the logo and website name */
+  .logo img {
+    width: 40px;
+    /* Ukuran logo dikurangi */
+    height: 40px;
+    /* Ukuran logo dikurangi */
+    margin-right: 10px;
+  }
 
-    /* Style the user section */
-    .user {
-        display: flex;
-        align-items: center;
-    }
+  /* Style the user section */
+  .user {
+    display: flex;
+    align-items: center;
+  }
 
-    /* Style the dropdown button */
-    .dropbtn {
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        margin-left: 10px;
-        /* Tambahkan margin antara dropdown dan username */
-    }
+  /* Style the dropdown button */
+  .dropbtn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Tambahkan margin antara dropdown dan username */
+  }
 
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        right: 0;
-        /* Dropdown akan muncul di sebelah kanan */
-    }
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    /* Dropdown akan muncul di sebelah kanan */
+  }
 
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-    /* Style dropdown links */
-    .dropdown-content a {
-        color: black;
-        padding: 8px 12px;
-        /* Padding link dropdown disesuaikan */
-        text-decoration: none;
-        display: block;
-    }
+  /* Style dropdown links */
+  .dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    /* Padding link dropdown disesuaikan */
+    text-decoration: none;
+    display: block;
+  }
 
-    /* Change dropdown link color on hover */
-    .dropdown-content a:hover {
-        background-color: #f1f1f1;
-    }
+  /* Change dropdown link color on hover */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
 
   .content {
     padding: 16px;
@@ -109,7 +109,10 @@ include '../../../public/script.php';
         <span>Terminal Bus Cilacap</span>
       </div>
       <div class="user">
-        <span id="username">agenbus</span>
+        <span id="username"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+          </svg> agenbus</span>
         <div class="dropdown">
           <button onclick="toggleDropdown()" class="dropbtn">▼</button>
           <div id="dropdownContent" class="dropdown-content">

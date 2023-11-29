@@ -69,7 +69,7 @@ $db = new Database();
 
     .sidebar {
         height: 100%;
-        width: 150px;
+        width: 170px;
         position: fixed;
         background-color: lightgray;
         padding-top: 5px;
@@ -90,7 +90,7 @@ $db = new Database();
     }
 
     .content {
-        margin-left: 150px;
+        margin-left: 170px;
     }
 
     body {

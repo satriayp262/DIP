@@ -31,6 +31,9 @@ if ($cek > 0) {
         $_SESSION['username'] = $username;
         $_SESSION['level'] = "user";
         header('Location: ../views/agen/dashboard.php');
+    } else {
+        echo "Username atau password salah";
+        header('Location: login.php');
     }
 } else {
     // Pesan kesalahan ketika username atau password salah

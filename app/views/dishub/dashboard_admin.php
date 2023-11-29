@@ -126,19 +126,6 @@ include '../../../public/script.php';
         /* Sesuaikan dengan tinggi navbar Anda */
     }
 
-    .container {
-        width: 95%;
-        /* Sesuaikan lebar container sesuai kebutuhan */
-        margin: 0 auto;
-        /* Membuat container berada di tengah */
-        text-align: justify;
-        /* Mengatur rata kanan-kiri */
-    }
-
-    .container h3 {
-        text-align: center;
-    }
-
     .footer {
         background-color: blue;
         color: white;
@@ -158,6 +145,30 @@ include '../../../public/script.php';
         margin-right: 10px;
         vertical-align: middle;
     }
+
+    .container {
+        width: 95%;
+        /* Sesuaikan lebar container sesuai kebutuhan */
+        margin: 0 auto;
+        margin-top: 10px;
+        /* Membuat container berada di tengah */
+        text-align: justify;
+        /* Mengatur rata kanan-kiri */
+    }
+
+    .container h4 {
+        text-align: center;
+    }
+
+    .garis {
+        border: none;
+        height: 30px;
+        /* Tinggi garis footer */
+        background-color: blue;
+        /* Warna garis footer */
+        margin: 0;
+        /* Menghapus margin default */
+    }
 </style>
 
 <body>
@@ -167,7 +178,10 @@ include '../../../public/script.php';
             <span>Terminal Bus Cilacap</span>
         </div>
         <div class="user">
-            <span id="username">admin123</span>
+            <span id="username"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg> admin123</span>
             <div class="dropdown">
                 <button onclick="toggleDropdown()" class="dropbtn">▼</button>
                 <div id="dropdownContent" class="dropdown-content">
@@ -196,10 +210,8 @@ include '../../../public/script.php';
         <img src="../../../public/asset/Frame 1.png" alt="" style="width: 100%; max-width: 100%; height: auto;">
         <div class="garis"></div>
         <div class="container">
-            <h3>Selamat Datang Di Halaman Admin!</h3>
-            <h5>Dashboard admin Terminal Bus Cilacap menjadi kendali utama bagi pengelola untuk memantau dan mengelola operasional terminal dengan efisien. Dengan informasi yang terkini tentang jadwal keberangkatan dan kedatangan bus,
-                serta pemantauan penjualan tiket, pengguna dapat melacak performa armada dengan cepat dan mudah. Fitur analisis data yang komprehensif memungkinkan pengambilan keputusan yang tepat, sementara fokus pada keamanan data
-                dan koordinasi tim yang efektif memastikan operasional yang aman dan efisien.</h6>
+            <h4>Selamat Datang Di Halaman Admin!</h4>
+            <h6>Dashboard admin Terminal Bus Cilacap menjadi kendali utama bagi pengelola untuk memantau dan mengelola operasional terminal dengan efisien. Dengan informasi yang terkini tentang jadwal keberangkatan dan kedatangan bus dapat diperoleh dengan cepat dan mudah, dan koordinasi tim yang efektif memastikan operasional yang aman dan efisien.</h6><br>
         </div>
         <div class="footer">
             &copy; 2023 Terminal Bus Cilacap

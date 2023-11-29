@@ -168,14 +168,17 @@ $db = new Database();
                 <span>Terminal Bus Cilacap</span>
             </div>
             <div class="user">
-                <span id="username">admin123</span>
-                <div class="dropdown">
-                    <button onclick="toggleDropdown()" class="dropbtn">▼</button>
-                    <div id="dropdownContent" class="dropdown-content">
-                        <a href="../index.php" onclick="logout()">Logout</a>
-                    </div>
+            <span id="username"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg> admin123</span>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="dropbtn">▼</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <a href="../index.php" onclick="logout()">Logout</a>
                 </div>
             </div>
+        </div>
         </nav>
     </div>
 
