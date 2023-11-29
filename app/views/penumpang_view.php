@@ -13,28 +13,47 @@ $db = new Database();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERMINAL BUS CILACAP</title>
+    <!-- Tambahkan pustaka jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Tambahkan pustaka DataTable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 </head>
 
 <style>
+    /* Style the navbar */
     .navbar {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: blue;
+        /* Warna biru */
         color: white;
-        padding: 10px;
+        padding: 10px 20px;
+        /* Padding atas dan bawah disesuaikan */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Tambahkan shadow untuk efek visual */
         z-index: 1000;
     }
 
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        color: white;
+    /* Style the logo and website name */
+    .logo img {
+        width: 40px;
+        /* Ukuran logo dikurangi */
+        height: 40px;
+        /* Ukuran logo dikurangi */
+        margin-right: 10px;
     }
 
-    .navbar-brand img {
-        margin-right: 10px;
+    /* Style the user section */
+    .login {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
     }
 
     .px-5 {
@@ -45,6 +64,7 @@ $db = new Database();
     table {
         width: 70%;
         margin: 20px auto;
+        padding-top: 20px;
     }
 
     .sidebar {
@@ -59,7 +79,7 @@ $db = new Database();
         padding: 5px 15px;
         text-align: left;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 15px;
         color: black;
         display: block;
     }
@@ -106,21 +126,19 @@ $db = new Database();
 
 <body>
     <div>
-        <nav class="navbar bg-tertiary">
-            <div class="container-fluid">
-                <div class="navbar-brand">
-                    <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
-                    Terminal Bus Cilacap
-                </div>
-                <div>
-                    <a href="login.php" class="btn btn-primary" style="background-color:blue; color:white;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
-                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                        </svg> Login</a>
-                </div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../../public/asset/logo.png" alt="Logo">
+                <span>Terminal Bus Cilacap</span>
+            </div>
+            <div class="login">
+                <a href="login.php" style="color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                    </svg> login</a>
             </div>
         </nav>
     </div>
+
     <div class="sidebar">
         <a href="index.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                 <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
@@ -137,7 +155,7 @@ $db = new Database();
         <div class="px-5 py-2">
             <h3>DAFTAR JUMLAH PENUMPANG BULANAN</h3>
             <div>
-                <table class="table table-striped">
+            <table class="table table-striped data-table" id="myDataTable">
                     <thead class="table-primary">
                         <tr>
                             <th>No</th>
@@ -168,6 +186,17 @@ $db = new Database();
             &copy; 2023 Terminal Bus Cilacap
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.data-table').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Indonesian.json" // File bahasa Indonesia
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

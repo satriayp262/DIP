@@ -14,29 +14,81 @@ $db = new Database();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERMINAL BUS CILACAP</title>
     <style>
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: blue;
-            /* Ganti dengan warna latar belakang navbar Anda */
-            color: white;
-            /* Ganti dengan warna teks navbar Anda */
-            padding: 10px;
-            z-index: 1000;
-            /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
-        }
+            /* Style the navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: blue;
+        /* Warna biru */
+        color: white;
+        padding: 10px 20px;
+        /* Padding atas dan bawah disesuaikan */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Tambahkan shadow untuk efek visual */
+        z-index: 1000;
+    }
 
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
+    /* Style the logo and website name */
+    .logo img {
+        width: 40px;
+        /* Ukuran logo dikurangi */
+        height: 40px;
+        /* Ukuran logo dikurangi */
+        margin-right: 10px;
+    }
 
-        .navbar-brand img {
-            margin-right: 10px;
-        }
+    /* Style the user section */
+    .user {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Style the dropdown button */
+    .dropbtn {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+        /* Tambahkan margin antara dropdown dan username */
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+        /* Dropdown akan muncul di sebelah kanan */
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Style dropdown links */
+    .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        /* Padding link dropdown disesuaikan */
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change dropdown link color on hover */
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
 
         .px-5 {
             margin: 0 auto;
@@ -60,7 +112,7 @@ $db = new Database();
             padding: 5px 15px;
             text-align: left;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 15px;
             color: black;
             display: block;
         }
@@ -110,12 +162,19 @@ $db = new Database();
 
 <body>
     <div>
-        <nav class="navbar bg-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand">
-                    <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
-                    Terminal Bus Cilacap
-                </a>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../../public/asset/logo.png" alt="Logo">
+                <span>Terminal Bus Cilacap</span>
+            </div>
+            <div class="user">
+                <span id="username">agenbus</span>
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()" class="dropbtn">▼</button>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="../index.php" onclick="logout()">Logout</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
@@ -127,13 +186,9 @@ $db = new Database();
         <a href="tampil_jdwl.php" style="background-color:cornflowerblue; color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
             </svg> Jadwal Bus</a>
-        <a href="tampil_pnp.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <a href="tampil_pnp.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang</a>
-        <a href="../index.php" style="margin-top: 305px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
-                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-            </svg> Logout</a>
     </div>
 
     <div class="content">

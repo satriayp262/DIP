@@ -13,114 +13,131 @@ $db = new Database();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERMINAL BUS CILACAP</title>
-    <style>
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: blue;
-            /* Ganti dengan warna latar belakang navbar Anda */
-            color: white;
-            /* Ganti dengan warna teks navbar Anda */
-            padding: 10px;
-            z-index: 1000;
-            /* Pastikan nilai z-index cukup tinggi untuk menempatkan navbar di atas elemen lain */
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .navbar-brand img {
-            margin-right: 10px;
-        }
-
-        .px-5 {
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        table {
-            width: 70%;
-            margin: 20px auto;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 150px;
-            position: fixed;
-            background-color: lightgray;
-            padding-top: 5px;
-        }
-
-        .sidebar a {
-            padding: 5px 15px;
-            text-align: left;
-            text-decoration: none;
-            font-size: 18px;
-            color: black;
-            display: block;
-        }
-
-        .sidebar a:hover {
-            background-color: blue;
-            color: white;
-        }
-
-        .content {
-            margin-left: 150px;
-        }
-
-        body {
-            padding-top: 60px;
-            /* Sesuaikan dengan tinggi navbar Anda */
-        }
-
-        th,
-        td {
-            padding: 8px;
-            text-align: center;
-        }
-
-        .footer {
-            background-color: blue;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            padding: 10px;
-        }
-
-        .sidebar a svg {
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-    </style>
+    <!-- Tambahkan pustaka jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Tambahkan pustaka DataTable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 </head>
+
+<style>
+    /* Style the navbar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: blue;
+        /* Warna biru */
+        color: white;
+        padding: 10px 20px;
+        /* Padding atas dan bawah disesuaikan */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Tambahkan shadow untuk efek visual */
+        z-index: 1000;
+    }
+
+    /* Style the logo and website name */
+    .logo img {
+        width: 40px;
+        /* Ukuran logo dikurangi */
+        height: 40px;
+        /* Ukuran logo dikurangi */
+        margin-right: 10px;
+    }
+
+    /* Style the user section */
+    .login {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+    }
+
+    .judul {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    table {
+        width: 70%;
+        margin: 20px auto;
+        padding-top: 20px;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        background-color: lightgray;
+        padding-top: 5px;
+    }
+
+    .sidebar a {
+        padding: 5px 15px;
+        text-align: left;
+        text-decoration: none;
+        font-size: 15px;
+        color: black;
+        display: block;
+    }
+
+    .sidebar a:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    .content {
+        margin-left: 150px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-bottom: 20px;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .footer {
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .sidebar a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    .sidebar a svg {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+</style>
 
 <body>
     <div>
-        <nav class="navbar bg-tertiary">
-            <div class="container-fluid">
-                <div class="navbar-brand">
-                    <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
-                    Terminal Bus Cilacap
-                </div>
-                <div>
-                    <a href="login.php" class="btn btn-primary" style="background-color:blue; color:white;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
-                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                        </svg> Login</a>
-                </div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../../public/asset/logo.png" alt="Logo">
+                <span>Terminal Bus Cilacap</span>
+            </div>
+            <div class="login">
+                <a href="login.php" style="color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                    </svg> login</a>
             </div>
         </nav>
     </div>
@@ -138,21 +155,11 @@ $db = new Database();
     </div>
 
     <div class="content">
-        <div class="px-5 py-2">
+        <div class="judul">
             <h3>JADWAL PERJALANAN BUS</h3>
         </div>
 
-        <div class="search-container" style="text-align: center;">
-            <form action="proses_pencarian.php" method="get" class="search-form">
-                <div style="display: inline-flex; border-radius: 25px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-                    <input type="text" id="keyword" name="keyword" placeholder="Cari Tujuan Anda" style="padding: 10px; border: none; border-radius: 25px 0 0 25px; outline: none; width: 300px;">
-                    <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border: none; background-color: #007bff; color: #fff; border-radius: 0 25px 25px 0; cursor: pointer; transition: background-color 0.3s ease;">Cari</button>
-                </div>
-            </form>
-        </div>
-
-
-        <table class="table table-striped data-table">
+        <table class="table table-striped data-table" id="myDataTable">
             <thead class="table-primary">
                 <tr>
                     <th>No</th>
@@ -182,12 +189,21 @@ $db = new Database();
             </tbody>
         </table>
 
-        <div class="footer">
-            &copy; 2023 Terminal Bus Cilacap
-        </div>
+    </div>
+    
+    <div class="footer">
+        &copy; 2023 Terminal Bus Cilacap
     </div>
 
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.data-table').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Indonesian.json" // File bahasa Indonesia
+                }
+            });
+        });
+    </script>
 
 </body>
 

@@ -14,25 +14,80 @@ $db = new database();
 </head>
 
 <style>
+    /* Style the navbar */
     .navbar {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: blue;
+        /* Warna biru */
         color: white;
-        padding: 10px;
+        padding: 10px 20px;
+        /* Padding atas dan bawah disesuaikan */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Tambahkan shadow untuk efek visual */
         z-index: 1000;
     }
 
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        color: white;
+    /* Style the logo and website name */
+    .logo img {
+        width: 40px;
+        /* Ukuran logo dikurangi */
+        height: 40px;
+        /* Ukuran logo dikurangi */
+        margin-right: 10px;
     }
 
-    .navbar-brand img {
-        margin-right: 10px;
+    /* Style the user section */
+    .user {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Style the dropdown button */
+    .dropbtn {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+        /* Tambahkan margin antara dropdown dan username */
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+        /* Dropdown akan muncul di sebelah kanan */
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Style dropdown links */
+    .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        /* Padding link dropdown disesuaikan */
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change dropdown link color on hover */
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
     }
 
     .content {
@@ -53,12 +108,19 @@ $db = new database();
 
 <body>
     <div>
-        <nav class="navbar bg-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand">
-                    <img src="../../../public/asset/logo.png" alt="Bootstrap" width="30" height="24">
-                    Terminal Bus Cilacap
-                </a>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../../public/asset/logo.png" alt="Logo">
+                <span>Terminal Bus Cilacap</span>
+            </div>
+            <div class="user">
+                <span id="username">agenbus</span>
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()" class="dropbtn">▼</button>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <a href="../index.php" onclick="logout()">Logout</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </div>
