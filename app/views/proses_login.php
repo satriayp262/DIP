@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session if you haven't already
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,31 +14,34 @@ if ($koneksi->connect_error) {
     die("Koneksi gagal: " . $koneksi->connect_error);
 }
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $input_username = $_POST['username'];
+    $input_password = $_POST['password'];
 
-// Query ke database untuk mencocokkan data login
-$query = mysqli_query($koneksi, "SELECT * FROM user where username='$username' && password ='$password'");
-$cek = mysqli_num_rows($query);
+    // Prevent SQL injection using prepared statements
+    $query = $koneksi->prepare("SELECT * FROM user WHERE username=? AND password=?");
+    $query->bind_param("ss", $input_username, $input_password);
+    $query->execute();
+    $result = $query->get_result();
 
-if ($cek > 0) {
+    if ($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
 
-    $data = mysqli_fetch_assoc($query);
-
-    if ($data['level'] == "admin") {
-        $_SESSION['username'] = $username;
-        $_SESSION['level'] = "admin";
-        header('Location: ../views/dishub/dashboard_admin.php');
-    } else if ($data['level'] == "user") {
-        $_SESSION['username'] = $username;
-        $_SESSION['level'] = "user";
-        header('Location: ../views/agen/dashboard.php');
+        if ($data['level'] == "admin") {
+            $_SESSION['username'] = $input_username;
+            $_SESSION['level'] = "admin";
+            header('Location: ../views/dishub/dashboard_admin.php');
+            exit();
+        } elseif ($data['level'] == "user") {
+            $_SESSION['username'] = $input_username;
+            $_SESSION['level'] = "user";
+            header('Location: ../views/agen/dashboard.php');
+            exit();
+        }
     } else {
-        echo "Username atau password salah";
-        header('Location: login.php');
+        // JavaScript alert for incorrect username or password
+        echo "<script>alert('Username atau password salah');</script>";
+        exit();
     }
-} else {
-    // Pesan kesalahan ketika username atau password salah
-    echo "Username atau password salah";
-    header('Location: login.php');
 }
+?>
