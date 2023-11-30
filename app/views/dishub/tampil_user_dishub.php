@@ -13,11 +13,6 @@ $db = new Database();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERMINAL BUS CILACAP</title>
-    <!-- Tambahkan pustaka jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Tambahkan pustaka DataTable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 </head>
 
 <style>
@@ -106,7 +101,6 @@ $db = new Database();
     table {
         width: 70%;
         margin: 20px auto;
-        padding-top: 20px;
     }
 
     .sidebar {
@@ -195,42 +189,75 @@ $db = new Database();
         <a href="tampil_jdwl_admin.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
                 <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
             </svg> Jadwal Bus</a>
-        <a href="tampil_pnp_agen.php" style="background-color:cornflowerblue, color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <a href="tampil_pnp_agen.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang 1</a>
         <a href="tampil_pnp_dishub.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
             </svg> Penumpang 2</a>
-        <a href="tampil_user_dishub.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+        <a href="tampil_user_dishub.php" style="background-color:cornflowerblue; color:white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
             </svg> Anggota</a>
     </div>
 
     <div class="content">
         <div class="px-5 py-2">
-            <h3>DAFTAR JUMLAH PENUMPANG BULANAN</h3>
+            <h3>DAFTAR USERNAME ANGGOTA</h3>
             <div>
-                <table class="table table-striped data-table" id="myDataTable">
+                <a href="tambah_pnp_dishub.php" class="btn btn-primary mb-3 float-start"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                    </svg> Tambah Data User</a>
+            </div>
+            <div class="mt-5">
+                <?php
+                if (isset($_GET['success']) && $_GET['success'] == "tambah") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data User Berhasil Ditambahkan!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                } elseif (isset($_GET['success']) && $_GET['success'] == "update") {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data User Berhasil Diedit!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                } elseif (isset($_GET['success']) && $_GET['success'] == "hapus") {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Data User Berhasil Dihapus!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                }
+                ?>
+            </div>
+            <div>
+                <table class="table table-striped">
                     <thead class="table-primary">
                         <tr>
                             <th>No</th>
-                            <th>Nama PO</th>
-                            <th>Bulan</th>
-                            <th>Tahun</th>
-                            <th>Jumlah</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Level</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody class="table-light">
                         <?php
                         $no = 1;
-                        foreach ($db->tampil_penumpang() as $x) {
+                        foreach ($db->tampil_user() as $x) {
                         ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
-                                <td><?php echo $x['nama_po'] ?></td>
-                                <td><?php echo $x['bulan'] ?></td>
-                                <td><?php echo $x['tahun'] ?></td>
-                                <td><?php echo $x['jumlah'] ?></td>
+                                <td><?php echo $x['username'] ?></td>
+                                <td><?php echo $x['password'] ?></td>
+                                <td><?php echo $x['level'] ?></td>
+                                <td>
+                                    <a href="edit_user_dishub.php?id_user=<?php echo $x['id_user']; ?>&aksi=edit" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                        </svg></a>
+                                    <a href="proses_user_dishub.php?id_user=<?php echo $x['id_user']; ?>&aksi=hapus" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                        </svg></a>
+                                </td>
                             </tr>
                         <?php
                         }
@@ -239,22 +266,10 @@ $db = new Database();
                 </table>
             </div>
         </div>
-
         <div class="footer">
             &copy; 2023 Terminal Bus Cilacap
         </div>
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.data-table').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Indonesian.json" // File bahasa Indonesia
-                }
-            });
-        });
-    </script>
-
 </body>
 
 </html>

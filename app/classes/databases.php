@@ -125,6 +125,40 @@ class database
     {
         mysqli_query($this->koneksi, "delete from penumpang2 where id_pnp2='$idPnp2'");
     }
+
+    function tampil_user()
+    {
+        $hasil = array();
+        $data = mysqli_query($this->koneksi, "select * from user");
+        while ($d = mysqli_fetch_array($data)) {
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
+    function tambah_user($username, $password, $level)
+    {
+        mysqli_query($this->koneksi, "insert into user (username,password,level) values('$username','$password','$level')");
+    }
+
+    function edit_user($iduser)
+    {
+        $hasil = array();
+        $data = mysqli_query($this->koneksi, "select * from user where id_user='$iduser'");
+        while ($d = mysqli_fetch_array($data)) {
+            $hasil[] = $d;
+        }
+        return $hasil;
+    }
+
+    function update_user($iduser, $username, $password, $level)
+    {
+        mysqli_query($this->koneksi, "update user set username='$username',password='$password' ,level='$level' where id_user='$iduser'");
+    }
+
+    function hapus_user($iduser)
+    {
+        mysqli_query($this->koneksi, "delete from user where id_user='$iduser'");
+    }
     
 }
 
