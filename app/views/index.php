@@ -128,6 +128,10 @@ include '../../public/script.php';
         text-align: center;
     }
 
+    .container h6 {
+        margin-bottom: 15px;
+    }
+
     .garis {
         border: none;
         height: 30px;
@@ -136,6 +140,26 @@ include '../../public/script.php';
         /* Warna garis footer */
         margin: 0;
         /* Menghapus margin default */
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        /* Spasi antara gambar */
+        margin-top: 20px;
+        /* Atur margin atas antara teks dan galeri gambar */
+        margin-bottom: 15px;
+    }
+
+    .image-gallery img {
+        width: 200px;
+        /* Atur lebar gambar */
+        height: auto;
+        margin-bottom: 10px;
+        /* Atur margin bawah antar gambar */
+        /* Opsional: tambahkan style lain sesuai kebutuhan */
     }
 </style>
 
@@ -177,11 +201,17 @@ include '../../public/script.php';
             <h6>Terminal Bus Cilacap juga menampilkan kebersihan dan keteraturan yang terjaga dengan baik, menjadikannya lingkungan yang menyenangkan bagi pengguna jasa transportasi. Dikelilingi oleh kegiatan bervariasi, dari kegiatan pedagang hingga keramaian penumpang yang berdatangan, terminal ini menjadi cerminan kehidupan sehari-hari masyarakat Cilacap.</h6>
             <h6>Dengan fungsi pentingnya sebagai pusat transportasi, Terminal Bus Cilacap tidak hanya menjadi tempat transit tetapi juga merupakan jendela yang menghubungkan Kota Cilacap dengan berbagai daerah lain di Indonesia, menguatkan peranannya sebagai titik penting dalam mobilitas penduduk dan perekonomian lokal.</h6>
         </div>
+        <div class="garis"></div>
+        <div class="image-gallery">
+            <img src="../../public/asset/agen.jpg" alt="">
+            <img src="../../public/asset/agen2.webp" alt="">
+            <img src="../../public/asset/ruang tunngu.jpg" alt="">
+            <img src="../../public/asset/kantin.jpg" alt="">
+            <img src="../../public/asset/shelter.jpeg" alt="">
+        </div>
         <div class="footer">
             &copy; 2023 Terminal Bus Cilacap
         </div>
     </div>
-
 </body>
-
 </html>
