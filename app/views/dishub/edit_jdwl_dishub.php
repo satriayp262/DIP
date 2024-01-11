@@ -130,7 +130,7 @@ $db = new database();
     <div class="content">
         <h3 class="text-center mt-5">EDIT JADWAL BUS</h3>
         <div class="card px-3 py-3" style="margin: 25px auto; padding: 20px; max-width:400px">
-            <form action="proses_jdwl.php?aksi=update" method="post">
+            <form action="proses_jdwl_dishub.php?aksi=update" method="post">
                 <?php
                 $editData = $db->edit_jadwal($_GET['id_jadwal']);
                 foreach ($editData as $data) {
@@ -171,7 +171,7 @@ $db = new database();
                         </tr>
                     </table>
                     <div class="d-flex justify-content-between">
-                        <a href="tampil_jdwl.php" class="btn btn-secondary w-100 mx-2">Kembali</a>
+                        <a href="tampil_jdwl_admin.php" class="btn btn-secondary w-100 mx-2">Kembali</a>
                         <button type="submit" class="btn btn-primary w-100 mx-2">Submit</button>
                     </div>
                 <?php

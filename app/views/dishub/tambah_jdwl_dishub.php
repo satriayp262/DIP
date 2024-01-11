@@ -157,6 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <td><label for="id_bus">Nama Bus:</label></td>
                         <td>
                             <select name="id_bus" id="id_bus">
+                                <option value="">Pilih Bus</option>
                                 <?php
                                 // Query untuk mengambil nama-nama bus dari tabel bus
                                 $query = "SELECT id_bus, nama_bus FROM bus";
@@ -189,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </table>
                 <div class="d-flex justify-content-between">
                     <a href="tampil_jdwl.php" class="btn btn-secondary w-100 mx-2">Kembali</a>
-                    <button type="submit" class="btn btn-success w-100 mx-2">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 mx-2">Submit</button>
                 </div>
             </form>
         </div>
